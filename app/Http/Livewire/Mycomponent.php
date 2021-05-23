@@ -10,6 +10,7 @@ use App\Models\Limit;
 use App\Models\Root;
 use Livewire\WithPagination;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\App;;
 
 
 class Mycomponent extends Component
@@ -46,6 +47,7 @@ class Mycomponent extends Component
 
     public function mount()
     {
+        
         $this->surahs = Surah::all();
         $this->roots_word = Root::all();
         // dd($this->roots_word);
@@ -82,13 +84,13 @@ class Mycomponent extends Component
         if ($this->language == "Farsi") {
             if (!is_null($this->term)) {
                 $this->result_fa = Translation::where('translation', 'like',  "%$this->term%")
-                    ->paginate(8);
+                    ->paginate();
             }
         }
         if ($this->language == "Arabic") {
             if (!is_null($this->term)) {
                 $this->result_ar = Ayah::where('ayah_ar_content', 'like',  "%$this->term%")
-                    ->paginate(8);
+                    ->paginate();
             }
         }
     }
@@ -206,8 +208,3 @@ class Mycomponent extends Component
         // }
 
         
-        //Generates passing roots data
-        // $this->roots_word = $root_data->pluck('word');
-        // $this->roots_place = $root_data->pluck('place');
-        // $this->roots_count= $root_data->pluck('count');  
-        // $this->roots_id= $root_data->flatten()->pluck('_id'); 

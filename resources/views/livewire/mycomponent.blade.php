@@ -155,7 +155,7 @@
             <div x-show=" openTab===3">
                 @if (!is_null($result_fa))
                     @foreach ($result_fa as $item)
-                    {{ $loop->iteration }}. {{ $item->translation }}
+                    {{ (($result_fa->currentPage() * 15) - 15) + $loop->iteration }}. {{ $item->translation }}
                    <br><br>
                    <hr> 
                     @endforeach
@@ -166,7 +166,7 @@
             <div x-show=" openTab===4">
                 @if (!is_null($result_ar))
                     @foreach ($result_ar as $item)
-                    {{ $loop->iteration }}. {{ $item->ayah_ar_content }}
+                    {{ (($result_ar->currentPage() * 15) - 15) + $loop->iteration  }}. {{ $item->ayah_ar_content }}
                    <br><br>
                    <hr> 
                     @endforeach
@@ -178,7 +178,7 @@
                 @if (!is_null($roots_result))
                 <div>
                     @foreach ($roots_result as $item)
-                    {{ $loop->iteration }}. {{ $item->ayah_ar_content }} ({{ $item->ayah_num }} :
+                    {{ (($roots_result->currentPage() * 15) - 15) + $loop->iteration  }}. {{ $item->ayah_ar_content }} ({{ $item->ayah_num }} :
                         {{ $item->surah_id }})
                         <br> <br>
                         @endforeach
