@@ -10,12 +10,29 @@ class RootController extends Controller
 {
     public function index()
     {
-        $file = file_get_contents(public_path('../resources/root.json'));
-        $Array = explode("\n", $file);
-        $root_data = collect([]);
-        foreach ($Array as $element) {
-            $root_data->push(json_decode($element));
-        }
+        ini_set('memory_limit', -1);
+        set_time_limit(0);
+        
+        // Writer
+        // $file = file_get_contents(public_path('../resources/root.json'));
+        // $Array = explode("\n", $file);
+        // foreach ($Array as $element) {
+        //     DB::table('roots')->insert(
+        //                 [
+        //                     'json' => $element,
+        //                     'word' => json_decode($element)->word
+        //                 ]
+        //             );
+        // }
+// --------------------
+        $selectedroot = 1;
+        $data = Root::find(1);
+        $data = $data->json['place'];
+        dd($data);
+// ------------------------
+        
+        
+
         // dd($root_data);
         // foreach ($root_data as $item) {
         //     DB::table('roots')->insert(
@@ -27,7 +44,7 @@ class RootController extends Controller
         // }
 
 
-        Root::insert(['json' => $root_data]);
+        // Root::insert(['json' => $root_data]);
                 // $root_data = collect([]);
 
     }

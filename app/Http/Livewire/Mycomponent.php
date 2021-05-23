@@ -7,13 +7,10 @@ use App\Models\Surah;
 use App\Models\Ayah;
 use App\Models\Translation;
 use App\Models\Limit;
-use Hamcrest\Text\IsEmptyString;
+use App\Models\Root;
 use Livewire\WithPagination;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
 
-
-use function PHPUnit\Framework\isEmpty;
 
 class Mycomponent extends Component
 {
@@ -50,18 +47,8 @@ class Mycomponent extends Component
     public function mount()
     {
         $this->surahs = Surah::all();
-
-        $file = file_get_contents(public_path('../resources/root.json'));
-        $Array = explode("\n", $file);
-        $root_data = collect([]);
-        foreach ($Array as $element) {
-            $root_data->push(json_decode($element));
-        }
-        //Generates passing roots data
-        $this->roots_word = $root_data->pluck('word');
-        $this->roots_place = $root_data->pluck('place');
-        // $this->roots_count= $root_data->pluck('count');  
-        // $this->roots_id= $root_data->flatten()->pluck('_id'); 
+        $this->roots_word = Root::all();
+        // dd($this->roots_word);
     }
 
     public function render()
@@ -77,16 +64,17 @@ class Mycomponent extends Component
             //     ->paginate(8),
             'roots_result' => Ayah::wherein('id', $this->rootayah_num)->paginate()
         ]);
+        
     }
 
     public function updatedselectedroot()
     {
-        $this->rootayah_num = Arr::pluck($this->roots_place[$this->selectedroot], 'index');
-        $this->rootayah_num = Arr::flatten($this->rootayah_num, 1);
-        $this->rootayah_num = array_map(function ($val) {
-            return $val + 1;
-        }, $this->rootayah_num);
-        //increases root ayah numbers by one
+        $row = Root::find($this->selectedroot+1)->json;
+        foreach ($row['place'] as &$item) {
+            $item['index'] = $item['index'] + 1;
+        }
+        $this->rootayah_num = Arr::pluck($row['place'], 'index');
+        // dd( $this->rootayah_num);
     }
 
     public function updatedterm()
@@ -192,3 +180,34 @@ class Mycomponent extends Component
 
     // $fixed_jsonArray = array_map('trim', $jsonArray);
         // dd($fixed_jsonArray);
+
+
+         // $this->rootayah_num = Arr::flatten($this->rootayah_num, 1);
+        // dd($data);
+        // $this->rootayah_num = Root::select('json')->get('place');
+        // $this->rootayah_num = array_map(function ($val) {
+        //     return $val + 1;
+        // }, $this->rootayah_num);
+
+        // ========================
+        // $this->rootayah_num = Arr::pluck($this->roots_place[$this->selectedroot], 'index');
+        // $this->rootayah_num = Arr::flatten($this->rootayah_num, 1);
+        // $this->rootayah_num = array_map(function ($val) {
+        //     return $val + 1;
+        // }, $this->rootayah_num);
+        //increases root ayah numbers by one
+
+
+        // $file = file_get_contents(public_path('../resources/root.json'));
+        // $Array = explode("\n", $file);
+        // $root_data = collect([]);
+        // foreach ($Array as $element) {
+        //     $root_data->push(json_decode($element));
+        // }
+
+        
+        //Generates passing roots data
+        // $this->roots_word = $root_data->pluck('word');
+        // $this->roots_place = $root_data->pluck('place');
+        // $this->roots_count= $root_data->pluck('count');  
+        // $this->roots_id= $root_data->flatten()->pluck('_id'); 

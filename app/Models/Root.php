@@ -9,9 +9,10 @@ class Root extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['word', 'json'];
+    protected $guarded = [];
 
     protected $casts = [
-        'json' => 'array'
+        'json' => 'array',
+        'place' => 'array'
     ];
 }

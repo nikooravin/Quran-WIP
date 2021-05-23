@@ -15,7 +15,6 @@
                 <option value="{{ $surah->id }}">{{ $loop->iteration }}.{{ $surah->name }}</option>
                 @endforeach
             </select>
-
         </div>
 
         <div class="pr-6">
@@ -43,7 +42,7 @@
                 tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
                 <option value=""> ریشه ها</option>
                 @foreach ($roots_word as $item) 
-                <option value="{{ $loop->index }}"> {{ $item }}</option>
+                <option value="{{ $loop->index }}"> {{ $item->word }}</option>
                @endforeach
             </select>
             {{-- {{ dump($selectedroot) }} --}}
@@ -64,11 +63,7 @@
             <input wire:model.lazy="term" type="text" placeholder="جستجوی {{  $language  }}"
                 class="flex object-leftw-auto bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
         </div>
-
-
     </div>
-    
-    
     
     <div>
         <div x-data="{ openTab: 1 }">
@@ -100,11 +95,9 @@
                 <li @click="openTab = 5" :class="{ '-mb-px': openTab === 3 }" class="mr-1">
                     <a :class="openTab === 5 ? 'border-l border-t border-r rounded-t text-blue-700' : 'text-blue-500 hover:text-blue-800'"
                         class="bg-white inline-block py-2 px-4 font-semibold" href="#">
-                        جستجوی ریشه: @if (!is_null($selectedroot)) {{ $roots_word[$selectedroot] }} {{'('.$roots_result->total().')' }}@endif    
+                        جستجوی ریشه: @if (!is_null($selectedroot)) {{ $roots_word[$selectedroot]->word }} {{'('.$roots_result->total().')' }}@endif    
                     </a>
                 </li>
-                
-                    
                 
                 <li class="pt-2 mr-48">
                     <div>
@@ -114,6 +107,7 @@
                     </div>
                 </li>
             </ul>
+        
             <div class="w-full">
                 <div x-show="openTab === 1">
                     <div class="pt-1" id="ar_verse">
@@ -123,7 +117,6 @@
                             <div wire:model="selectedText" class="mt-5">
                                 @foreach ($ar_verse as $item)
                                 <span x-data="{ hover: false }" class="relative absolute">
-
                                     <span x-on:mouseover="hover = true" x-on:mouseout="hover = false"
                                         class="hover:text-blue-500">
                                         {{ $item['ayah_ar_content'] }} ({{ $item['ayah_num'] }} :
@@ -132,17 +125,18 @@
 
                                     <span x-show="hover"
                                         class="fixed z-0 w-64 p-2 -mt-1 text-sm leading-tight text-white transform translate-x-1/2 -translate-y-full bg-green-600 rounded-lg shadow-lg pointer-events-none">
-                                {{ $fa_verse[$loop->index]['translation'] }} : {{ $fa_verse[$loop->index]['trans_ayah_num'] }}
-                                </span>
+                                    {{ $fa_verse[$loop->index]['translation'] }} : {{ $fa_verse[$loop->index]['trans_ayah_num'] }}
+                                    </span>
                                 
-                            </span>
-                            @endforeach
+                                </span>
+                                @endforeach
+                            </div>
+                            @endif
                         </div>
-                        @endif
                     </div>
                 </div>
             </div>
-            
+        
             <div x-show=" openTab===2">
                 <div class="pt-1" id="fa_verse">
                     <div class="decoration-clone bg-gradient-to-b from-gray-100 to-blue-50  text-xl leading-8 font-semibold px-8 text-justify justify-center">
@@ -160,20 +154,17 @@
 
             <div x-show=" openTab===3">
                 @if (!is_null($result_fa))
-                {{-- {{ dd($result_fa) }} --}}
                     @foreach ($result_fa as $item)
                     {{ $loop->iteration }}. {{ $item->translation }}
                    <br><br>
                    <hr> 
                     @endforeach
                     {{ $result_fa->links() }}
-                
                 @endif
             </div>
 
             <div x-show=" openTab===4">
                 @if (!is_null($result_ar))
-           
                     @foreach ($result_ar as $item)
                     {{ $loop->iteration }}. {{ $item->ayah_ar_content }}
                    <br><br>
@@ -194,9 +185,6 @@
                         {{ $roots_result->links() }}
                 </div>
                 @endif
-            </div>
-            
-            
             </div>
         </div>
     </div>
