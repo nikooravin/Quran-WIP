@@ -10,7 +10,8 @@ use App\Models\Limit;
 use App\Models\Root;
 use Livewire\WithPagination;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\App;;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Str;
 
 
 class Mycomponent extends Component
@@ -43,11 +44,11 @@ class Mycomponent extends Component
     public $roots_place;
     // public $root_data;
     public $rootayah_num = [];
+    public $root_highlight;
 
 
     public function mount()
     {
-        
         $this->surahs = Surah::all();
         $this->roots_word = Root::all();
         // dd($this->roots_word);
@@ -55,6 +56,20 @@ class Mycomponent extends Component
 
     public function render()
     {
+        function to_persian_number($number)
+{
+    $number = str_replace("1","۱",$number);
+    $number = str_replace("2","۲",$number);
+    $number = str_replace("3","۳",$number);
+    $number = str_replace("4","۴",$number);
+    $number = str_replace("5","۵",$number);
+    $number = str_replace("6","۶",$number);
+    $number = str_replace("7","۷",$number);
+    $number = str_replace("8","۸",$number);
+    $number = str_replace("9","۹",$number);
+    $number = str_replace("0","۰",$number);
+    return $number;
+}
         return view('livewire.mycomponent', [
             'ar_verse' => $this->ar_verse,
             'fa_verse' => $this->fa_verse,
@@ -64,19 +79,33 @@ class Mycomponent extends Component
             'result_ar' => $this->result_ar,
             // 'result' => Translation::where('translation', 'like',  "%$this->term%")
             //     ->paginate(8),
-            'roots_result' => Ayah::wherein('id', $this->rootayah_num)->paginate()
+            'roots_result' => Ayah::wherein('id', $this->rootayah_num)->paginate(),
+            'highlights' => $this->root_highlight
         ]);
         
     }
 
+    
     public function updatedselectedroot()
     {
         $row = Root::find($this->selectedroot+1)->json;
+        
         foreach ($row['place'] as &$item) {
             $item['index'] = $item['index'] + 1;
         }
+        unset($item);
         $this->rootayah_num = Arr::pluck($row['place'], 'index');
-        // dd( $this->rootayah_num);
+        
+        
+        $this->root_highlight = Arr::pluck($row['place'], 'location');
+        $this->root_highlight = Arr::flatten($this->root_highlight);
+        // foreach ($this->root_highlight as &$item) {
+        //     $item = $item - 1;
+        // }
+        
+        // dd( $this->root_highlight);
+
+        // $pattern = '^(?:\w+ ){5}\K\w+';
     }
 
     public function updatedterm()

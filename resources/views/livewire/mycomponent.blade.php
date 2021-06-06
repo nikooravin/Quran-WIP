@@ -10,7 +10,6 @@
                 class="flex w-auto bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
                 tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
                 <option value=""> لیست سوره ها</option>
-
                 @foreach ($surahs as $surah)
                 <option value="{{ $surah->id }}">{{ $loop->iteration }}.{{ $surah->name }}</option>
                 @endforeach
@@ -41,9 +40,9 @@
                 class="flex w-auto bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
                 tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
                 <option value=""> ریشه ها</option>
-                @foreach ($roots_word as $item) 
+                @foreach ($roots_word as $item)
                 <option value="{{ $loop->index }}"> {{ $item->word }}</option>
-               @endforeach
+                @endforeach
             </select>
             {{-- {{ dump($selectedroot) }} --}}
             {{-- {{ dd($roots) }} --}}
@@ -64,41 +63,46 @@
                 class="flex object-leftw-auto bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
         </div>
     </div>
-    
+
     <div>
         <div x-data="{ openTab: 1 }">
             <ul class="flex border-b mt-3">
                 <li @click="openTab = 1" :class="{ '-mb-px': openTab === 1 }" class="-mb-px mr-1">
                     <a :class="openTab === 1 ? 'border-l border-t border-r rounded-t text-blue-700' : 'text-blue-500 hover:text-blue-800'"
-                        class="bg-white inline-block py-2 px-4 font-semibold" href="#">قرآن</a>
+                        class="bg-white inline-block py-2 px-4 font-semibold" href="#">قرآن
+                        @if (!is_null($ar_verse))
+                        @endif
+                    </a>
                 </li>
                 <li @click="openTab = 2" :class="{ '-mb-px': openTab === 2 }" class="mr-1">
                     <a :class="openTab === 2 ? 'border-l border-t border-r rounded-t text-blue-700' : 'text-blue-500 hover:text-blue-800'"
-                        class="bg-white inline-block py-2 px-4 font-semibold" href="#">ترجمه</a>
+                        class="bg-white inline-block py-2 px-4 font-semibold" href="#">ترجمه
+                    </a>
                 </li>
-                
+
                 <li @click="openTab = 3" :class="{ '-mb-px': openTab === 3 }" class="mr-1">
                     <a :class="openTab === 3 ? 'border-l border-t border-r rounded-t text-blue-700' : 'text-blue-500 hover:text-blue-800'"
                         class="bg-white inline-block py-2 px-4 font-semibold" href="#">
-                         جستجوی ترجمه: @if (!is_null($result_fa))   {{ $term }} {{'('.$result_fa->total().')' }}    @endif        
+                        جستجوی ترجمه: @if (!is_null($result_fa)) {{ $term }} {{'('.$result_fa->total().')' }} @endif
                     </a>
                 </li>
-                
-                
+
+
                 <li @click="openTab = 4" :class="{ '-mb-px': openTab === 3 }" class="mr-1">
                     <a :class="openTab === 4 ? 'border-l border-t border-r rounded-t text-blue-700' : 'text-blue-500 hover:text-blue-800'"
                         class="bg-white inline-block py-2 px-4 font-semibold" href="#">
-                        جستجوی قرآن: @if (!is_null($result_ar)) {{ $term }} {{'('.$result_ar->total().')' }}@endif    
+                        جستجوی قرآن: @if (!is_null($result_ar)) {{ $term }} {{'('.$result_ar->total().')' }}@endif
                     </a>
                 </li>
 
                 <li @click="openTab = 5" :class="{ '-mb-px': openTab === 3 }" class="mr-1">
                     <a :class="openTab === 5 ? 'border-l border-t border-r rounded-t text-blue-700' : 'text-blue-500 hover:text-blue-800'"
                         class="bg-white inline-block py-2 px-4 font-semibold" href="#">
-                        جستجوی ریشه: @if (!is_null($selectedroot)) {{ $roots_word[$selectedroot]->word }} {{'('.$roots_result->total().')' }}@endif    
+                        جستجوی ریشه: @if (!is_null($selectedroot)) {{ $roots_word[$selectedroot]->word }}
+                        {{'('.$roots_result->total().')' }}@endif
                     </a>
                 </li>
-                
+
                 <li class="pt-2 mr-48">
                     <div>
                         <button wire:click="back">
@@ -107,7 +111,7 @@
                     </div>
                 </li>
             </ul>
-        
+
             <div class="w-full">
                 <div x-show="openTab === 1">
                     <div class="pt-1" id="ar_verse">
@@ -125,9 +129,10 @@
 
                                     <span x-show="hover"
                                         class="fixed z-0 w-64 p-2 -mt-1 text-sm leading-tight text-white transform translate-x-1/2 -translate-y-full bg-green-600 rounded-lg shadow-lg pointer-events-none">
-                                    {{ $fa_verse[$loop->index]['translation'] }} : {{ $fa_verse[$loop->index]['trans_ayah_num'] }}
+                                        {{ $fa_verse[$loop->index]['translation'] }} :
+                                        {{ $fa_verse[$loop->index]['trans_ayah_num'] }}
                                     </span>
-                                
+
                                 </span>
                                 @endforeach
                             </div>
@@ -136,10 +141,11 @@
                     </div>
                 </div>
             </div>
-        
+
             <div x-show=" openTab===2">
                 <div class="pt-1" id="fa_verse">
-                    <div class="decoration-clone bg-gradient-to-b from-gray-100 to-blue-50  text-xl leading-8 font-semibold px-8 text-justify justify-center">
+                    <div
+                        class="decoration-clone bg-gradient-to-b from-gray-100 to-blue-50  text-xl leading-8 font-semibold px-8 text-justify justify-center">
                         @if (!is_null($fa_verse))
                         <div wire:model="selectedText" class="mt-5">
                             @foreach ($fa_verse as $item)
@@ -154,33 +160,55 @@
 
             <div x-show=" openTab===3">
                 @if (!is_null($result_fa))
-                    @foreach ($result_fa as $item)
-                    {{ (($result_fa->currentPage() * 15) - 15) + $loop->iteration }}. {{ $item->translation }}
-                   <br><br>
-                   <hr> 
-                    @endforeach
-                    {{ $result_fa->links() }}
+                @foreach ($result_fa as $item)
+                {{ (($result_fa->currentPage() * 15) - 15) + $loop->iteration }}. {{ $item->translation }}
+                <br><br>
+                <hr>
+                @endforeach
+                {{ $result_fa->links() }}
                 @endif
             </div>
 
             <div x-show=" openTab===4">
                 @if (!is_null($result_ar))
-                    @foreach ($result_ar as $item)
-                    {{ (($result_ar->currentPage() * 15) - 15) + $loop->iteration  }}. {{ $item->ayah_ar_content }}
-                   <br><br>
-                   <hr> 
-                    @endforeach
-                    {{ $result_ar->links() }}
+                @foreach ($result_ar as $item)
+                {{ (($result_ar->currentPage() * 15) - 15) + $loop->iteration  }}. {{ $item->ayah_ar_content }}
+                <br><br>
+                <hr>
+                @endforeach
+                {{ $result_ar->links() }}
                 @endif
             </div>
 
             <div x-show=" openTab===5">
                 @if (!is_null($roots_result))
                 <div>
+                    @php
+                        $i = 0;
+                    @endphp
+                    
                     @foreach ($roots_result as $item)
-                    {{ (($roots_result->currentPage() * 15) - 15) + $loop->iteration  }}. {{ $item->ayah_ar_content }} ({{ $item->ayah_num }} :
-                        {{ $item->surah_id }})
-                        <br> <br>
+                    @php
+                        $stringArray = explode(' ', $item->ayah_ar_content);
+                        $unicode = [
+                        "~[\x{0600}-\x{061F}]~u",
+                        "~[\x{063B}-\x{063F}]~u",
+                        "~[\x{064B}-\x{065E}]~u",
+                        "~[\x{066A}-\x{06FF}]~u",
+                        "~[ء]~u",
+                        "~[ــ]~u",
+                        ];
+
+                        $stringArray = preg_replace($unicode, "", $stringArray);
+                        $stringIndex = $highlights[$i]-1;
+                        $stringArray[$stringIndex] = '<b>' . $stringArray[$stringIndex] . '</b>';
+                        $alteredString = implode(' ',$stringArray);
+                        if($i<=count($highlights)-1){ $i++; } 
+                    @endphp 
+                        {{ (($roots_result->currentPage() * 15) - 15) + $loop->iteration  }}. 
+                        {!! $alteredString !!}
+                        {{-- {{ $item->ayah_ar_content }}  --}}
+                        ({{ $item->ayah_num }} : {{ $item->surah_id }}) <br> <br>
                         @endforeach
                         {{ $roots_result->links() }}
                 </div>

@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html >
+<html dir="rtl" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Master Layout</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link href="https://v1.fontapi.ir/css/Sahel" rel="stylesheet">
     @livewireStyles
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
@@ -56,6 +57,7 @@
     </nav>
     
     @yield('content')
+    
     @livewireScripts
 </body>
 

@@ -1,4 +1,9 @@
 /* ./resources/css/app.css */
 @tailwind base;
 @tailwind components;
+@import url(fontiran.css); /* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
+html {
+    @apply font-body ;
+}
 @tailwind utilities;
+

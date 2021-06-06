@@ -14,5 +14,6 @@ class Translation extends Model
     public function Ayah(){
         return $this->belongsTo(Ayah::class);
     }
+
     use HasFactory;
 }

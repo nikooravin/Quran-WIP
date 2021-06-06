@@ -1,0 +1,13 @@
+@font-face {
+	font-family: iransans;
+	src: url('../fonts/IRANSansWeb(FaNum).eot');
+
+	src: url('../fonts/IRANSansWeb(FaNum).eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+		url('../fonts/IRANSansWeb(FaNum).woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		url('../fonts/IRANSansWeb(FaNum).ttf') format('truetype'),
+		url('../fonts/IRANSansWeb(FaNum).svg') format('svg');
+
+	font-weight: normal;
+
+	font-style: normal
+}

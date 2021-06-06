@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminEdit;
+use App\Http\Controllers\AdminPanel;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
@@ -13,6 +15,8 @@ use App\Http\Livewire;
 use App\http\Controllers\TranslationController;
 use App\Http\Controllers\PagerController;
 use App\Http\Controllers\RootController;
+use App\Models\Surah;
+use App\Models\Translation;
 
 
 // Route::get('/posts', function () {
@@ -50,8 +54,13 @@ Route::get('/live', function () {
     return view('translation.livetran');
 });
 
-route::get('/rooter', [RootController::class, 'index']);
+Route::get('/admin', [AdminPanel::class, 'index']);
 
+Route::get('/admin/edit/{x}', [AdminEdit::class, 'index'])
+->name('edit');
+
+
+route::get('/rooter', [RootController::class, 'index']);
 
 
 // Route::get('/live', [App\Http\Livewire\Mycomponent::class]);

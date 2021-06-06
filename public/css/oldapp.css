@@ -1,17 +1,124 @@
+/*!
+ *  Persian Fonts 1.0.0 by Web Solution Tools - http://websolution.tools
+ *  License - Free (Font : MIT License)
+ */
+
 @font-face {
-  font-family: iransans;
+  font-family: 'B Mitra';
 
-  src: url("/fonts/IRANSansWeb(FaNum).eot?42867a575c264c73f9b4ba9387e5a097");
+  src: url(/fonts/vendor/persianBMitra/BMitra.eot?e58a4f2c7689851371a4a97acc229275);
 
-  src: url("/fonts/IRANSansWeb(FaNum).eot?42867a575c264c73f9b4ba9387e5a097?#iefix") format('embedded-opentype'), /* IE6-8 */
-		url("/fonts/IRANSansWeb(FaNum).woff?53c1802a24a35a265422ab817812858e") format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-		url("/fonts/IRANSansWeb(FaNum).ttf?94a3bf44964a339b16e2ead7a81d8110") format('truetype'),
-		url("/fonts/IRANSansWeb(FaNum).svg?67307dbcd2061451cb4ba949b06a42c3") format('svg');
-
-  font-weight: normal;
-
-  font-style: normal
+  src: url(/fonts/vendor/persianBMitra/BMitra.eot?e58a4f2c7689851371a4a97acc229275?#iefix) format('embedded-opentype'), url(/fonts/vendor/persianBMitra/BMitra.woff2?566afde80b834300bc318817d344ae61) format('woff2'), url(/fonts/vendor/persianBMitra/BMitra.woff?ae35974d99266c6423a6038670e9e0cd) format('woff'), url(/fonts/vendor/persianBMitra/BMitra.ttf?9f65e93264198c97ceb2a833cf014264) format('truetype'), url(/fonts/vendor/persianBMitra/BMitra.svg?6ce2206cb7ac3e8512b61ed0aec9d724#svgFontName) format('svg');
 }
+
+@font-face {
+  font-family: 'BNasimBold';
+
+  src: url(/fonts/vendor/persianBNasim/BNasimBold.eot?d9c7a13bcdf8aed65037769e5bea50dc);
+
+  src: url(/fonts/vendor/persianBNasim/BNasimBold.eot?d9c7a13bcdf8aed65037769e5bea50dc?#iefix) format('embedded-opentype'), url(/fonts/vendor/persianBNasim/BNasimBold.woff2?926e689c6144a8849b5f3ee1534803e0) format('woff2'), url(/fonts/vendor/persianBNasim/BNasimBold.woff?8a3e575eaf44b94f844c30a56045a8de) format('woff'), url(/fonts/vendor/persianBNasim/BNasimBold.ttf?47f32516d34cbba00402e1f8a1629279) format('truetype'), url(/fonts/vendor/persianBNasim/BNasimBold.svg?a7f8055f86ea4d87b973ad60049fc2b9#svgFontName) format('svg');
+}
+
+@font-face {
+  font-family: 'BRoya';
+
+  src: url(/fonts/vendor/persianBRoya/BRoya.eot?45616c4de6d5feb2057bba805ffe53d1);
+
+  src: url(/fonts/vendor/persianBRoya/BRoya.eot?45616c4de6d5feb2057bba805ffe53d1?#iefix) format('embedded-opentype'), url(/fonts/vendor/persianBRoya/BRoya.woff2?7503277d2857b7da9c9520805e0f42fb) format('woff2'), url(/fonts/vendor/persianBRoya/BRoya.woff?f48b4bcc43d1f9b5f3ccd424392fd819) format('woff'), url(/fonts/vendor/persianBRoya/BRoya.ttf?ae9b1f959cb64ac5dac67a1e405199f9) format('truetype'), url(/fonts/vendor/persianBRoya/BRoya.svg?9a065acde6bb84a144aa5dc1bd4c2d37#svgFontName) format('svg');
+}
+
+@font-face {
+  font-family: 'BTabassom';
+
+  src: url(/fonts/vendor/persianBTabassom/BTabassom.eot?e8e08b05b37977a56244945e989f2a2b);
+
+  src: url(/fonts/vendor/persianBTabassom/BTabassom.eot?e8e08b05b37977a56244945e989f2a2b?#iefix) format('embedded-opentype'), url(/fonts/vendor/persianBTabassom/BTabassom.woff2?ce8ef396a76a7cef82f4efe222bb113d) format('woff2'), url(/fonts/vendor/persianBTabassom/BTabassom.woff?f5836d053177ac8863f542889a206cb3) format('woff'), url(/fonts/vendor/persianBTabassom/BTabassom.ttf?d6e5fdb48edba522f1bda41dc0e89589) format('truetype'), url(/fonts/vendor/persianBTabassom/BTabassom.svg?58436998ff787e242be05529e7f7cf88#svgFontName) format('svg');
+}
+
+@font-face {
+  font-family: 'BTitrBold';
+
+  src: url(/fonts/vendor/persianBTitr/BTitrBold.eot?78f75f54382f2838a17bc09c597b0f7c);
+
+  src: url(/fonts/vendor/persianBTitr/BTitrBold.eot?78f75f54382f2838a17bc09c597b0f7c?#iefix) format('embedded-opentype'), url(/fonts/vendor/persianBTitr/BTitrBold.woff2?ff3a68834d2b4d2e5bf24e428bb77d05) format('woff2'), url(/fonts/vendor/persianBTitr/BTitrBold.woff?996df6223089af1bbbd7c2c8e30b5fef) format('woff'), url(/fonts/vendor/persianBTitr/BTitrBold.ttf?af1319a4a84d7a5d2f79ea6bc47bde83) format('truetype'), url(/fonts/vendor/persianBTitr/BTitrBold.svg?ac08691a42b7722e3bbe8b57bbd3c503#svgFontName) format('svg');
+}
+
+@font-face {
+  font-family: 'BTitrTGEBold';
+
+  src: url(/fonts/vendor/persianBTitrTGE/BTitrTGEBold.eot?53ccfd1e06df1ec4702fcca7bb4bd55c);
+
+  src: url(/fonts/vendor/persianBTitrTGE/BTitrTGEBold.eot?53ccfd1e06df1ec4702fcca7bb4bd55c?#iefix) format('embedded-opentype'), url(/fonts/vendor/persianBTitrTGE/BTitrTGEBold.woff2?dc3b82f8c7bcf7d30ae16c50c0b266dc) format('woff2'), url(/fonts/vendor/persianBTitrTGE/BTitrTGEBold.woff?43d7d8ef451fc8c968ac7b13ab5937b1) format('woff'), url(/fonts/vendor/persianBTitrTGE/BTitrTGEBold.ttf?dc43b0c969903bf3554c71625c6e8f35) format('truetype'), url(/fonts/vendor/persianBTitrTGE/BTitrTGEBold.svg?5f65f84a767ba5dcd4d7a897a3318666#svgFontName) format('svg');
+}
+
+@font-face {
+  font-family: 'B Traffic';
+
+  src: url(/fonts/vendor/persianBTraffic/BTraffic.eot?19610b7d360a01e266a326d6a2b5c7b6);
+
+  src: url(/fonts/vendor/persianBTraffic/BTraffic.eot?19610b7d360a01e266a326d6a2b5c7b6?#iefix) format('embedded-opentype'), url(/fonts/vendor/persianBTraffic/BTraffic.woff2?5963cc6595cfd9896a1d0331cb250492) format('woff2'), url(/fonts/vendor/persianBTraffic/BTraffic.woff?fb4f440b8b1980df14c27ab8c5cc097a) format('woff'), url(/fonts/vendor/persianBTraffic/BTraffic.ttf?1c0b839decd6ea7a56ef23dec8a42796) format('truetype'), url(/fonts/vendor/persianBTraffic/BTraffic.svg?fa77b071c94b0cc06ae68b5fe615a361#svgFontName) format('svg');
+}
+
+@font-face {
+  font-family: 'IRANSans';
+
+  src: url(/fonts/vendor/persianIRANSans/IRANSans.eot?a443d958bc070b1425d088874402db3e);
+
+  src: url(/fonts/vendor/persianIRANSans/IRANSans.eot?a443d958bc070b1425d088874402db3e?#iefix) format('embedded-opentype'), url(/fonts/vendor/persianIRANSans/IRANSans.woff2?775e6e6124aad3492ca6479a28176b3a) format('woff2'), url(/fonts/vendor/persianIRANSans/IRANSans.woff?2999404e800bde2ca1d6b1eaf54e3b01) format('woff'), url(/fonts/vendor/persianIRANSans/IRANSans.ttf?5f3d8c2d86b34eff01dab34711c55d87) format('truetype'), url(/fonts/vendor/persianIRANSans/IRANSans.svg?24abaae522343124513978faf3f8d668#svgFontName) format('svg');
+}
+
+@font-face {
+  font-family: 'WeblogmaYekan';
+
+  src: url(/fonts/vendor/persianYekan/WeblogmaYekan.eot?9ef33c946353cdd10a7384e7f47ced97);
+
+  src: url(/fonts/vendor/persianYekan/WeblogmaYekan.eot?9ef33c946353cdd10a7384e7f47ced97?#iefix) format('embedded-opentype'), url(/fonts/vendor/persianYekan/WeblogmaYekan.woff2?258100eff60b93256793cb25590d11d7) format('woff2'), url(/fonts/vendor/persianYekan/WeblogmaYekan.woff?ea973fa97e7a82de7dac33681d6c6759) format('woff'), url(/fonts/vendor/persianYekan/WeblogmaYekan.ttf?202b67a66bfa03549235e47125333fce) format('truetype'), url(/fonts/vendor/persianYekan/WeblogmaYekan.svg?749206a81cd643b8286fa5d57b0c7558#svgFontName) format('svg');
+}
+
+@font-face {
+  font-family: 'Wyekan';
+
+  src: url(/fonts/vendor/persianYekan/Wyekan.eot?d10a85c438af64b5921ec582d3f6e356);
+
+  src: url(/fonts/vendor/persianYekan/Wyekan.eot?d10a85c438af64b5921ec582d3f6e356?#iefix) format('embedded-opentype'), url(/fonts/vendor/persianYekan/Wyekan.woff2?de66e99bb117ad6af289778005f60c2b) format('woff2'), url(/fonts/vendor/persianYekan/Wyekan.woff?ae68dae8df1174442aeef34a7098f6b5) format('woff'), url(/fonts/vendor/persianYekan/Wyekan.ttf?9dfbdd110ac065d879baafc96b8288e4) format('truetype'), url(/fonts/vendor/persianYekan/Wyekan.svg?2c99a5c047b4b53641cf25c588fee2c5#svgFontName) format('svg');
+}
+
+.persian.mitra {
+  font-family: "B Mitra", Arial, Helvetica, sans-serif;
+}
+
+.persian.nasim {
+  font-family: "BNasimBold", Arial, Helvetica, sans-serif;
+}
+
+.persian.roya {
+  font-family: "BRoya", Arial, Helvetica, sans-serif;
+}
+
+.persian.tabassom {
+  font-family: "BTabassom", Arial, Helvetica, sans-serif;
+}
+
+.persian.titr {
+  font-family: "BTitrBold", Arial, Helvetica, sans-serif;
+}
+
+.persian.titrtge {
+  font-family: "BTitrTGEBold", Arial, Helvetica, sans-serif;
+}
+
+.persian.traffic {
+  font-family: "B Traffic", Arial, Helvetica, sans-serif;
+}
+
+.persian.iransans {
+  font-family: "IRANSans", Arial, Helvetica, sans-serif;
+}
+
+.persian.yekan {
+  font-family: "B Yekan", Arial, Helvetica, sans-serif;
+}
+
 /* ./resources/css/app.css */
 
 /* ! tailwindcss v2.0.3 | MIT License | https://tailwindcss.com */
@@ -599,10 +706,6 @@ video {
   .container {
     max-width: 1536px;
   }
-} /* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
-
-html {
-  font-family: iransans, َArial;
 }
 
 .space-y-0 > :not([hidden]) ~ :not([hidden]) {
@@ -11235,12 +11338,16 @@ html {
   clear: none;
 }
 
-.font-body {
-  font-family: iransans, َArial;
+.font-sans {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.font-display {
-  font-family: iransans, Arial;
+.font-serif {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .font-thin {
@@ -41856,12 +41963,16 @@ html {
     clear: none;
   }
 
-  .sm\:font-body {
-    font-family: iransans, َArial;
+  .sm\:font-sans {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .sm\:font-display {
-    font-family: iransans, Arial;
+  .sm\:font-serif {
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+
+  .sm\:font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
   .sm\:font-thin {
@@ -72399,12 +72510,16 @@ html {
     clear: none;
   }
 
-  .md\:font-body {
-    font-family: iransans, َArial;
+  .md\:font-sans {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .md\:font-display {
-    font-family: iransans, Arial;
+  .md\:font-serif {
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+
+  .md\:font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
   .md\:font-thin {
@@ -102942,12 +103057,16 @@ html {
     clear: none;
   }
 
-  .lg\:font-body {
-    font-family: iransans, َArial;
+  .lg\:font-sans {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .lg\:font-display {
-    font-family: iransans, Arial;
+  .lg\:font-serif {
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+
+  .lg\:font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
   .lg\:font-thin {
@@ -133485,12 +133604,16 @@ html {
     clear: none;
   }
 
-  .xl\:font-body {
-    font-family: iransans, َArial;
+  .xl\:font-sans {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .xl\:font-display {
-    font-family: iransans, Arial;
+  .xl\:font-serif {
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+
+  .xl\:font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
   .xl\:font-thin {
@@ -164028,12 +164151,16 @@ html {
     clear: none;
   }
 
-  .\32xl\:font-body {
-    font-family: iransans, َArial;
+  .\32xl\:font-sans {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
-  .\32xl\:font-display {
-    font-family: iransans, Arial;
+  .\32xl\:font-serif {
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+
+  .\32xl\:font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
   .\32xl\:font-thin {
@@ -183905,5 +184032,3 @@ html {
             animation: bounce 1s infinite;
   }
 }
-
-

@@ -18,4 +18,6 @@ class Surah extends Model
     {
         return $this->hasMany(Ayah::class);
     }
+
+    
 }
